@@ -43,12 +43,15 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        viewport: { width: 1920, height: 1080 },
+      },
     },
 
-    // i am commenting out the following browsers because i want to run the tests only on chrome, but you can uncomment them if you want to 
+    // i am commenting out the following browsers because i want to run the tests only on chrome, but you can uncomment them if you want to
     // run the tests on other browsers
-    
+
     // {
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'] },
@@ -89,4 +92,3 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
-
