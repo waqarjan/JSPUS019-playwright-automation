@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
 
-// Groups related tests together
+// Describe method groups related tests together
 // test.describe('Group of tests', () => {} //doesn't have to be async, but test() may be async
 test.describe('Group of tests', () => {
   // Note: below tests does not navigates to any browser, therefore we don't give page fixture
@@ -39,3 +39,26 @@ test.describe('Group of tests', () => {
     console.log('Test case 3 is executed');
   });
 });
+
+/*
+Output will look like:
+
+
+Before all tests are executed
+--------------------------
+Before each test is executed
+Test case 1 is executed
+After each test is executed
+[chromium] › tests\day02\test-groups-intro.spec.js:34:3 › Group of tests › Test Case 2
+Before each test is executed
+Test case 2 is executed
+After each test is executed
+[chromium] › tests\day02\test-groups-intro.spec.js:38:3 › Group of tests › Test Case 3
+Before each test is executed
+Test case 3 is executed
+After each test is executed
+--------------------------
+After all tests are executed
+
+
+*/
