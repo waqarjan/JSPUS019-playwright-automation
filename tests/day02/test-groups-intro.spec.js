@@ -3,6 +3,7 @@ import { test } from '@playwright/test';
 // Groups related tests together
 // test.describe('Group of tests', () => {} //doesn't have to be async, but test() may be async
 test.describe('Group of tests', () => {
+  // Note: below tests does not navigates to any browser, therefore we don't give page fixture
 
   // Runs once before all tests in this file
   test.beforeAll(async () => {
@@ -37,5 +38,4 @@ test.describe('Group of tests', () => {
   test('Test Case 3', async () => {
     console.log('Test case 3 is executed');
   });
-  
 });
