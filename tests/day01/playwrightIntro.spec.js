@@ -2,7 +2,7 @@
     //const{test} = require("@playwright/test");
     
 //NEW WAY OF JS IMPORTING from ES MODULES
-    import { test } from 'playwright/test';
+import { test } from 'playwright/test';
 
 
 
