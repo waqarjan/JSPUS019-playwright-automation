@@ -41,24 +41,22 @@ test.describe('Group of tests', () => {
 });
 
 /*
-Output will look like:
-
+Output:
 
 Before all tests are executed
 --------------------------
 Before each test is executed
 Test case 1 is executed
 After each test is executed
-[chromium] › tests\day02\test-groups-intro.spec.js:34:3 › Group of tests › Test Case 2
+
 Before each test is executed
 Test case 2 is executed
 After each test is executed
-[chromium] › tests\day02\test-groups-intro.spec.js:38:3 › Group of tests › Test Case 3
+
 Before each test is executed
 Test case 3 is executed
 After each test is executed
 --------------------------
 After all tests are executed
-
 
 */
