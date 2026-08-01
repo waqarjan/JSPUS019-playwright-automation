@@ -14,3 +14,17 @@ import { test } from 'playwright/test';
    await page.waitForTimeout(5000);
 
  })
+
+ /*
+
+ Test Function Declaration:
+
+	test ('test description', function)
+	
+ 	test("", async({page})=>{
+
+ 	})
+
+	*page - is a Page fixture equivalent driver variable in selenium.
+
+ */-
