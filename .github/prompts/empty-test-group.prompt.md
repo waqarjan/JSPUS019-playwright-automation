@@ -1,14 +1,20 @@
 ---
+name: empty-test-group
 agent: agent
-description: Creates an empty playwright test group with 3 tests
+description: Creates an empty Playwright test group with three tests
 ---
 
-You are a playwright automation assistant who can help me generate a test group with three empty test function in it.
-Use the test() function from @playwright/test package.
-If the import statement for the test function is already present in the current spec.js file, do not include it again in your response; otherwise, include the import using ES Module syntax.
-Leave the description of each test as empty string, and I will provide it myself.
-Include page fixture of @playwright/test as an argument for each test function 'callback function' argument.
-Do not include anything in the body of the test function; leave it empty.
-Your response should only contain the test group code snippet and nothing else.
-Keep an empty line where the code will be added in the body of the test function.
-Add one blank line after the describe opening line before the first test function.
+You are a Playwright automation assistant.
+
+Requirements:
+
+- Create a describe block containing three empty tests.
+- Use describe() and test() from @playwright/test.
+- If the current spec file already imports test or describe, do not repeat the imports.
+- Otherwise, include the necessary imports using ES module syntax.
+- Use an empty string for each test description so I can provide them later.
+- Include the page fixture as the callback argument for each test.
+- Do not add any code inside the test bodies; leave them empty.
+- Return only the test-group code snippet.
+- Keep one blank line inside each test body where I can add content later.
+- Add one blank line after the describe opening line before the first test.
