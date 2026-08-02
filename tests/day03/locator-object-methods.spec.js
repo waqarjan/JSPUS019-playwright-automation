@@ -2,12 +2,13 @@ import { test } from '@playwright/test';
 import { beforeEach } from 'node:test';
 
 test.describe('Test Group', () => {
+  
   //create a beforeEach hook to navigate to the page before each test
   test.beforeEach(async ({ page }) => {
     await page.goto('https://the-internet-5chk.onrender.com/');
   });
 
-  
+
   test('Check(): checks the radio buttons and checkboxes if not unchecked', async ({ page }) => {
     // let checkboxLink = page.locator("//a[@href='/checkboxes']");
     // await checkboxLink.click();

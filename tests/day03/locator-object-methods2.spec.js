@@ -1,6 +1,8 @@
 import { test } from '@playwright/test';
 
-test.describe('Test Group', () => { test.beforeEach(async ({ page }) => {
+test.describe('Test Group', () => { 
+  
+  test.beforeEach(async ({ page }) => {
     await page.goto('https://the-internet-5chk.onrender.com/');
   });
 
