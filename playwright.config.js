@@ -33,10 +33,17 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    //the following settings i added to see the browser while running the tests and to take screenshots and videos on failure
+    //the following settings are added to see the browser while running the tests and to take screenshots and videos on failure
     headless: false,
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
+    video: {
+      mode: 'on-first-retry',
+      size: { width: 1920, height: 1080 },
+    },
+
+    launchOptions: {
+      slowMo: 0, //slow down by 100ms
+    },
   },
 
   /* Configure projects for major browsers */
@@ -44,8 +51,11 @@ export default defineConfig({
     {
       name: 'chromium',
       use: {
+        //channel: 'chrome',
         //...devices['Desktop Chrome'],
-        // viewport: { width: 1920, height: 1080 },
+        /*my addition: viewport:null - to run the tests in maximized window, we need to set the viewport to null and 
+          add the launchOptions with args --start-maximized
+        */
         viewport: null, //null means that the viewport will be the same as the browser window size
         launchOptions: {
           args: ['--start-maximized'], //to start the browser maximized

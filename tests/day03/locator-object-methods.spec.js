@@ -2,7 +2,7 @@ import { test } from '@playwright/test';
 import { beforeEach } from 'node:test';
 
 test.describe('Test Group', () => {
-  
+
   //create a beforeEach hook to navigate to the page before each test
   test.beforeEach(async ({ page }) => {
     await page.goto('https://the-internet-5chk.onrender.com/');
@@ -41,6 +41,7 @@ test.describe('Test Group', () => {
     //select by label
     await simpleDropdown.selectOption({ label: 'Option 1' }); //selects the option with label 'Option 1' from the dropdown
   });
+  
 });
 
 /*
