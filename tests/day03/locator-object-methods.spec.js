@@ -7,9 +7,8 @@ test.describe('Test Group', () => {
     await page.goto('https://the-internet-5chk.onrender.com/');
   });
 
-  test('Check(): checks the radio buttons and checkboxes if not unchecked', async ({
-    page,
-  }) => {
+  
+  test('Check(): checks the radio buttons and checkboxes if not unchecked', async ({ page }) => {
     // let checkboxLink = page.locator("//a[@href='/checkboxes']");
     // await checkboxLink.click();
 
@@ -20,9 +19,8 @@ test.describe('Test Group', () => {
     checkbox1.check(); //checks the first checkbox if unchecked it will be checked and if it is checked it will remain checked
   });
 
-  test('Uncheck(): unchecks the radio buttons and checkboxes if not checked', async ({
-    page,
-  }) => {
+
+  test('Uncheck(): unchecks the radio buttons and checkboxes if not checked', async ({ page }) => {
     page.getByText('Checkboxes').click(); //click on the link with text 'Checkboxes'
     let checkbox2 = page.locator(
       "//form[@id='checkboxes']/input[@type='checkbox'][2]",
@@ -30,9 +28,8 @@ test.describe('Test Group', () => {
     checkbox2.uncheck(); //unchecks the second checkbox if checked it will be unchecked and if it is unchecked it will remain unchecked
   });
 
-  test('SelectOption(): selects an option from a dropdown', async ({
-    page,
-  }) => {
+
+  test('SelectOption(): selects an option from a dropdown', async ({ page }) => {
     let dropdownLink = page.getByText('Dropdown'); //click on the link with text 'Dropdown'
     await dropdownLink.click();
     let simpleDropdown = page.locator("//select[@id='dropdown']");
