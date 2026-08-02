@@ -36,7 +36,21 @@ test.describe('Test Group', () => {
     await simpleDropdown.selectOption({index: 2});          //selects the option with index '2' from the dropdown
     //select by label
     await simpleDropdown.selectOption({label: 'Option 1'}); //selects the option with label 'Option 1' from the dropdown
-    await page.waitForTimeout(2000);
   });
 
 });
+
+
+/*
+Common Methods of Locator Object
+--------------------------------
+ Methods-Actions     Methods-Retrieval    Methods-State
+ --------------      ----------------     ------------
+-> click()           textContent()        isVisible()
+ fill()              innerText()          isEnabled()
+ type()              inputValue()         isChecked()     
+ press()             getAttribute()       isDisabled()
+-> check()
+-> uncheck()
+-> selectOption()
+*/
