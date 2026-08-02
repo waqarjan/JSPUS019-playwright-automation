@@ -49,9 +49,10 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'chromium', //change to Google Chrome by adding channel: 'chrome' in the use object below
+                        //change to Microsoft Edge by adding channel: 'msedge' in the use object below
       use: {
-        //channel: 'chrome',
+        channel: 'chrome',
         //...devices['Desktop Chrome'],
         /*my addition: viewport:null - to run the tests in maximized window, we need to set the viewport to null and 
           add the launchOptions with args --start-maximized
