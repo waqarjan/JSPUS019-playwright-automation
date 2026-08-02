@@ -37,15 +37,17 @@ test.describe('', () => { test.beforeEach(async ({ page }) => {
 });
 
 /*
+
 Common Methods of Locator Object
 --------------------------------
  Methods-Actions     Methods-Retrieval    Methods-State
  --------------      ----------------     ------------
  click()             textContent()        isVisible()
- fill()              -> innerText()       isEnabled()
+ -> fill()           -> innerText()       isEnabled()
  type()              -> inputValue()      isChecked()     
  press()             -> getAttribute()    isDisabled()
  check()
  uncheck()
  selectOption()
+ 
  */
