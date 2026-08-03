@@ -11,7 +11,7 @@ test('@envVarForPlayExt - Testing evnironment variable', async ({ page }) => {
 
 TO SET THE ENVIRONMENT VARIABLES:
 1. Go to ">Preferences: Open User Settings (JSON)" to open settings of VSCode to set Environment variables
-2. We set the environment variables for the 'Playbutton extension' & for running test in 'Terminal'
+2. Set the environment variables for the 'Playbutton extension' & for running test in 'Terminal'
 
     "playwright.env"{
     "variable_name": "value"
