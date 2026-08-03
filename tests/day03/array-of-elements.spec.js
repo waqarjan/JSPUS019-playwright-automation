@@ -9,16 +9,16 @@ test.describe('1-Test Suite for Array of Elements', () => {
     });
     
 
-    test("1-Verify that there are esxactly 50 link elements within the <ul> tag of the home page", async ({ page }) => {
+    test("@arrayOfElement1 -Verify that there are esxactly 50 link elements within the <ul> tag of the home page", async ({ page }) => {
     let numberOfULLink = await page.locator("//ul[@class='list-group']/li");
         expect(await numberOfULLink.count()).toBe(50);
     });
 
 
-    test("2-Verify that each of the 50 link elements within the <ul> tag is visible & clickable", async ({ page }) => {
+    test('@arrayOfElement2 -Verify that each of the 50 link elements within the <ul> tag is visible & clickable', async ({ page }) => {
       let elements = await page.locator("//ul[@class='list-group']/li/a").all();
-        
-      for(let e of await elements) {
+
+      for (let e of await elements) {
         await expect(e).toBeVisible(); //passing locator instance
         await expect(e).toBeEnabled();
         //----------
@@ -28,7 +28,7 @@ test.describe('1-Test Suite for Array of Elements', () => {
     });
 
 
-    test("3-Verify that each of the 50 link elements within the <ul> tag has a href attribute", async ({ page }) => {
+    test('@arrayOfElement3 -Verify that each of the 50 link elements within the <ul> tag has a href attribute', async ({ page }) => {
       let elements = await page.locator("//ul[@class='list-group']/li/a").all();
       for (let e of elements) {
         await expect(e).toHaveAttribute('href'); //passing locator instance

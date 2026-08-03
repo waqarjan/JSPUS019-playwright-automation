@@ -13,6 +13,7 @@ Requirements:
 - Use `import { test } from '@playwright/test';`
 - Return only one code block containing the test group
 - Use empty test titles: `test('', async ({ page }) => { ... })`
+ - Use empty test titles: `test("", async ({ page }) => { ... })`
 - Include the `page` fixture in each test callback argument
 - Use an empty string for each test description so I can provide them later.
 - Do not add any code inside the test bodies; leave them empty.
