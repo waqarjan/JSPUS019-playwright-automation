@@ -14,18 +14,14 @@ test.describe('Test Group', () => {
     // await checkboxLink.click();
 
     page.getByText('Checkboxes').click(); //click on the link with text 'Checkboxes'
-    let checkbox1 = page.locator(
-      "//form[@id='checkboxes']/input[@type='checkbox'][1]",
-    );
+    let checkbox1 = page.locator("//form[@id='checkboxes']/input[@type='checkbox'][1]");
     checkbox1.check(); //checks the first checkbox if unchecked it will be checked and if it is checked it will remain checked
   });
 
 
   test('Uncheck(): unchecks the radio buttons and checkboxes if not checked', async ({ page }) => {
     page.getByText('Checkboxes').click(); //click on the link with text 'Checkboxes'
-    let checkbox2 = page.locator(
-      "//form[@id='checkboxes']/input[@type='checkbox'][2]",
-    );
+    let checkbox2 = page.locator("//form[@id='checkboxes']/input[@type='checkbox'][2]");
     checkbox2.uncheck(); //unchecks the second checkbox if checked it will be unchecked and if it is unchecked it will remain unchecked
   });
 
