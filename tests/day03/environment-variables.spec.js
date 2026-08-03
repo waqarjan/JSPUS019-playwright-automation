@@ -29,7 +29,7 @@ TO CALL THE ENVIRONMENT VARIABLE:
 */
 
 
-test('@envVarFromVSCdoeJSON- Bypass Authentication by enconding credentials base64 format', async ({ page }) => {
+test('@envVarFromVSCdoeJSON- Bypass Authentication by enconding credentials base64 format & pass Credentials from User Settings JSON file', async ({ page }) => {
     let encodedCredentials = Buffer.from( `${process.env.PRACTICE_USERNAME}:${process.env.PRACTICE_PASSWORD}`).toString('base64');
 
     await page.setExtraHTTPHeaders({
