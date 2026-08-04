@@ -10,7 +10,7 @@ test.describe("", () => {
     })
     
     
-  test("@myFrame iframe test", async ({ page }) => {
+  test("@myFrame -iframe test", async ({ page }) => {
 
   let myFrame =  page.frameLocator("//iframe[@id='mce_0_ifr']");
 
@@ -24,7 +24,6 @@ test.describe("", () => {
 
   expect(myFrameTextArea).toHaveText("Hello my Frame")
 
-  console.log(myFrameTextArea.allInnerTexts());
   });
 
 });
