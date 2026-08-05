@@ -7,12 +7,12 @@ test('Window pop-up practice', async ({ page }) => {
   let promisedNewPageEvent = page.waitForEvent('popup');
   await page.goto('https://admin:admin@the-internet-5chk.onrender.com/windows');
 
-  await page.click("text='Click Here'"); //triggers the pop-up event
-  let newPage = await promisedNewPageEvent; //await for the promise to be resolved
-  await expect(newPage).toHaveTitle('New Window'); //new page title
-  await expect(page).toHaveTitle('Windows'); //old page title
+  await page.click("text='Click Here'");              //triggers the pop-up event
+  let newPage = await promisedNewPageEvent;           //await for the promise to be resolved
+  await expect(newPage).toHaveTitle('New Window');    //new page title
+  await expect(page).toHaveTitle('Windows');          //old page title
 
-  await page.bringToFront(); //to see the switch in viewport (optional)
+  await page.bringToFront();                          //to see the switch in viewport (optional)
   let firstWindowElement = await page.getByText('Opening a new window');
   expect(firstWindowElement).toBeVisible();
 
