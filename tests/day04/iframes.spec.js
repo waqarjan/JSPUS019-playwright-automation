@@ -11,18 +11,13 @@ test.describe("Test Group", () => {
     
     
   test("@myFrame -iframe test", async ({ page }) => {
-
-  let myFrame =  page.frameLocator("//iframe[@id='mce_0_ifr']");
-
-  let myFrameTextArea = myFrame.locator("//body[@id='tinymce']");  
-  
-  // await myFrameTextArea.clear(); 
-  //------OR-------
-  await myFrameTextArea.press("Control+A", "Backspace") //or "delete" // clearing with keyboard action
-
-  await myFrameTextArea.fill("Hello my Frame");
-
-  expect(myFrameTextArea).toHaveText("Hello my Frame")
+    let myFrame =  page.frameLocator("//iframe[@id='mce_0_ifr']");
+    let myFrameTextArea = myFrame.locator("//body[@id='tinymce']");  
+    // await myFrameTextArea.clear(); 
+    //------OR-------
+    await myFrameTextArea.press("Control+A", "Backspace") //or "delete" // clearing with keyboard action
+    await myFrameTextArea.fill("Hello my Frame");
+    expect(myFrameTextArea).toHaveText("Hello my Frame")
 
   });
 
