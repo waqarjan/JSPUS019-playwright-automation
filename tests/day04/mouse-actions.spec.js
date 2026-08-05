@@ -8,7 +8,7 @@ test.describe("Test Group", () => {
 
 
     test.afterEach(async ({ page }) => {
-       await page.waitForTimeout(2000);
+       //await page.waitForTimeout(2000);
     });
 
 
@@ -29,9 +29,9 @@ test.describe("Test Group", () => {
      for(let each of elements){
         await each.hover();
      }
-
     });
 
+    
     test("@mouseWheelScroll -Moue wheel scrolling", async ({ page }) => {
         await page.mouse.wheel(0, 3000);
     });
@@ -52,4 +52,5 @@ test.describe("Test Group", () => {
        let squareB = page.locator("//div[@id='column-b']");
        await squareA.dragTo(squareB);        
     });
+
 });
