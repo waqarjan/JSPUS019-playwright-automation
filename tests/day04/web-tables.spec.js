@@ -4,7 +4,6 @@ test('@webTables -Web table Practice', async ({ page }) => {
 
     await page.goto('https://admin:admin@the-internet-5chk.onrender.com/web-tables');
 
-
     let table = page.locator("//table[@id='ctl00_MainContent_orderGrid']");
 
     //playwright let you locate an element that's inside another element
