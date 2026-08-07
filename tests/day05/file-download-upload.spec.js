@@ -52,5 +52,5 @@ test('@fileUpload -File uploads', async ({ page }) => {
 
   //4- verify file upload
 
-      expect(page.getByText('File Uploaded!'));
+      expect(page.getByText('File Uploaded!')).toBeVisible();
 });
