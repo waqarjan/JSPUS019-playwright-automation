@@ -35,17 +35,11 @@ test.describe("Review Page", () => {
     await expect(countrySelect).toBeEnabled();
     await expect(postalCodeInput).toBeEnabled();
 
-    let cardNumber = process.env.CARD_NUMBER;
-    let cardExpiry = process.env.CARD_EXPIRY;
-    let cardCvc = process.env.CARD_CVC;
-    let country = process.env.CARD_COUNTRY;
-    let postalCode = process.env.CARD_POSTAL_CODE;
-
-    await cardNumberInput.fill(cardNumber);
-    await cardExpiryInput.fill(cardExpiry);
-    await cardCvcInput.fill(cardCvc);
-    await countrySelect.selectOption({ label: country });
-    await postalCodeInput.fill(postalCode);
+    await cardNumberInput.fill(process.env.CARD_NUMBER);
+    await cardExpiryInput.fill(process.env.CARD_EXPIRY);
+    await cardCvcInput.fill(process.env.CARD_CVC);
+    await countrySelect.selectOption({ label: process.env.CARD_COUNTRY });
+    await postalCodeInput.fill(process.env.CARD_POSTAL_CODE);
 
     await defaultCheckInput.check();
   });
