@@ -18,6 +18,9 @@ test.describe("Test Group", () => {
     await myFrameTextArea.press("Control+A", "Backspace"); //or "delete" // clearing with keyboard action
     await myFrameTextArea.fill("Hello my Frame");
     expect(myFrameTextArea).toHaveText("Hello my Frame");
+
   });
+
+
 
 });

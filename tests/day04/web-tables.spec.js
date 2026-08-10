@@ -75,6 +75,6 @@ test('@webTable3 -Check checkboxes of the table', async ({page}) => {
     for(let checkbox of checkBoxes){
         await checkbox.check();
         await expect(checkbox).toBeChecked();
-    }
+        }
   
 });

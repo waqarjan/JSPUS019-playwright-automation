@@ -1,6 +1,10 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
 
+//import everything from dotenv library and call config() method to read the .env file and load the environment variables into process.env
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -48,7 +52,7 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
+     {
       name: 'chromium', //change to Google Chrome by adding channel: 'chrome' in the use object below
                         //change to Microsoft Edge by adding channel: 'msedge' in the use object below
       use: {
@@ -63,6 +67,14 @@ export default defineConfig({
         },
       },
     },
+    // {
+    //   name:'Microsoft Edge',
+    //   use:{
+    //     ...devices['Desktop Edge'],
+    //     channel:'msedge',
+    //     viewport:{width:1900, height:1080}
+    //   },
+    // },
 
     // i am commenting out the following browsers because i want to run the tests only on chrome, but you can uncomment them if you want to
     // run the tests on other browsers

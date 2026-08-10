@@ -22,5 +22,7 @@ import { test } from '@playwright/test';
 
 
     /*in the 2nd test above the credentials are revelated in source code, to avoid that we can use the
-      playwright config file to store the credentials in "Environment Variables" and use it in the test */
+      playwright config file to store the credentials in "Environment Variables" and use it in the test 
+      
+      */
 
