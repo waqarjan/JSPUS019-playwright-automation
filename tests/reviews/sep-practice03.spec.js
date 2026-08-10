@@ -10,6 +10,7 @@ test.describe("Review Page", () => {
             await CommonUI.completePaymentPlanStep(page);
     });
 
+    
   test("Verify that Step 1 & Step 2 steppers are green and Step 3 stepper is blue", async ({ page }) => {
     let startApplicationCircle = page.locator("(//div[@class='step-circle'])[1]");
     let paymentPlanCircle = page.locator("(//div[@class='step-circle'])[2]");
@@ -19,6 +20,7 @@ test.describe("Review Page", () => {
     await expect(paymentPlanCircle).toHaveCSS('background-color', 'rgb(172, 245, 138)');
     await expect(reviewPageCircle).toHaveCSS('background-color', 'rgb(1, 201, 255)');
   });
+
 
   test("Verify that the payment input fields are enabled and accept card details", async ({ page }) => {
     let stripBankingIframe = page.frameLocator("//iframe[contains(@src,'js.stripe.com') and @title='Secure payment input frame']");
