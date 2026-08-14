@@ -16,7 +16,7 @@ test('@webTables -Web table Practice', async ({ page }) => {
     expect(columns.length).toBe(13);
     
     let cells = await table.locator('//td').all();
-    expect(allCells.length).toBe(104);
+    expect(cells.length).toBe(104);
  
     //print text of each cell
     for (let cell of cells){
@@ -36,7 +36,7 @@ test('@webTable1 -All Rows data except first and last columns', async ({ page })
   let allCells = await table.locator('//td').all();
 
   //exclude first and last columns
-  for (let row of dataRows) {
+  for (let row of rows) {
     let cells = await row.locator('//td').all();
 
     for (let i = 1; i < cells.length - 1; i++) {

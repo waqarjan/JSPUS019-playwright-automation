@@ -7,55 +7,50 @@ test.describe('Test Group', () => {
     expect ( await page.title() ).toBe("Practice");
   });
 
-  test('Verify checkboxes are checked', async ({ page }) => {
-    await page.getByText('Checkboxes').click();
-    let checkbox1 = page.locator("//form[@id='checkboxes']/input[@type='checkbox'][1]");
-    let checkbox2 = page.locator("//form[@id='checkboxes']/input[@type='checkbox'][2]" );
+  test("Verify checkboxes are checked", async ({ page }) => {
 
-    //check the checkboxes
-    await checkbox1.check();
-    await checkbox2.check();
+    await page.getByText("Checkboxes").click();
+    let firstCheckBox = page.locator("input#box1");
+    let secondCheckBox = page.locator("input#box2");
 
-    //assertion
-    await expect(checkbox1).toBeChecked();
-    await expect(checkbox2).toBeChecked();
-    //--------- or------------
-    expect ( await checkbox1.isChecked() ).toBe(true);
-    expect ( await checkbox2.isChecked() ).toBe(true);
+    await firstCheckBox.check();
+    await secondCheckBox.check();
+
+    await expect(firstCheckBox).toBeChecked();
+    await expect(secondCheckBox).toBeChecked();
+    
+    expect( await firstCheckBox.isChecked() ).toBeTruthy();
+    expect( await secondCheckBox.isChecked() ).toBeTruthy();
+  
+  });
+
+  test("Verify checkboxes are unchecked", async ({ page }) => {
+    await page.getByText("Checkboxes").click();
+    let firstCheckBox = page.locator("input#box1");
+    let secondCheckBox = page.locator("input#box2");
+
+    await firstCheckBox.uncheck();
+    await secondCheckBox.uncheck();
+
+    await expect(firstCheckBox).not.toBeChecked();
+    await expect(secondCheckBox).not.toBeChecked();
+
+    expect( await firstCheckBox.isChecked() ).toBeFalsy();
+    expect( await secondCheckBox.isChecked() ).toBeFalsy();
+
   });
 
 
-  test('Verify checkboxes are unchecked', async ({ page }) => {
-    await page.getByText('Checkboxes').click();
-    let checkbox1 = page.locator(
-      "//form[@id='checkboxes']/input[@type='checkbox'][1]",
-    );
-    let checkbox2 = page.locator(
-      "//form[@id='checkboxes']/input[@type='checkbox'][2]",
-    );
+  test("Verify text of the element", async ({ page }) => {
+    
+    let headerElement = page.locator("span.h1y");
 
-    // Uncheck the checkboxes
-    await checkbox1.uncheck();
-    await checkbox2.uncheck();
+    await expect(headerElement).toHaveText("Test Automation Practice");
 
-    //assertion
-    await expect(checkbox1).not.toBeChecked();
-    await expect(checkbox2).not.toBeChecked();
-    //--------- or------------
-    expect(await checkbox1.isChecked()).toBe(false);
-    expect(await checkbox2.isChecked()).toBe(false);
-  });
-
-
-  test('Verify visible text of the element', async ({ page }) => {
-
-    let headerElement =  page.locator("//span[@class='h1y']");
-
-    //assertion
-    await expect(headerElement).toHaveText('Test Automation Practice');
-    //--------- or------------
     let actualText = await headerElement.innerText();
-    expect(actualText).toEqual('Test Automation Practice');
+    
+    expect(actualText).toEqual("Test Automation Practice");
+
   });
   
 });

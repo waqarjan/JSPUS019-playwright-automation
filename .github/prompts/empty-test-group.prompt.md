@@ -10,7 +10,7 @@ Generate a single test group containing three empty `test()` functions.
 
 Requirements:
 
-- Use `import { test } from '@playwright/test';`
+- Use `import { test, expect } from '@playwright/test';`
 - Return only one code block containing the test group
 - Use empty test titles with double quotes: `test("", async ({ page }) => { ... })`
 - Include the `page` fixture in each test callback argument

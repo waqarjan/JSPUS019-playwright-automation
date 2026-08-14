@@ -9,33 +9,40 @@ test.describe('Test Group', () => {
   });
 
 
-  test('Check(): checks the radio buttons and checkboxes if not unchecked', async ({ page }) => {
-    // let checkboxLink = page.locator("//a[@href='/checkboxes']");
-    // await checkboxLink.click();
+  test("Check(): checks the radio button and check boxes if they haven't been checked yet", async ({ page }) => {
 
-    page.getByText('Checkboxes').click(); //click on the link with text 'Checkboxes'
-    let checkbox1 = page.locator("//form[@id='checkboxes']/input[@type='checkbox'][1]");
-    checkbox1.check(); //checks the first checkbox if unchecked it will be checked and if it is checked it will remain checked
+    // let checkboxesLink = page.locator("text='Checkboxes'");
+    let checkboxesLink = page.getByText("Checkboxes");
+    await checkboxesLink.click();
+
+    let checkbox1 = page.locator("//input[@id='box1']");
+
+    await checkbox1.check();
+   
   });
 
 
-  test('Uncheck(): unchecks the radio buttons and checkboxes if not checked', async ({ page }) => {
-    page.getByText('Checkboxes').click(); //click on the link with text 'Checkboxes'
-    let checkbox2 = page.locator("//form[@id='checkboxes']/input[@type='checkbox'][2]");
-    checkbox2.uncheck(); //unchecks the second checkbox if checked it will be unchecked and if it is unchecked it will remain unchecked
+  test("Uncheck: unchecks the radio button and check boxes if they haven't been unchecked yet", async ({ page }) => {
+    let checkboxesLink = page.getByText("Checkboxes");
+    await checkboxesLink.click();
+
+    let checkbox2 = page.locator("#box2");
+
+    await checkbox2.uncheck();
   });
 
 
-  test('SelectOption(): selects an option from a dropdown', async ({ page }) => {
-    let dropdownLink = page.getByText('Dropdown'); //click on the link with text 'Dropdown'
+  test("SelectOption(): used for dropdown boxes with select tagname", async ({ page }) => {
+    
+    let dropdownLink = page.getByText("Dropdown");
     await dropdownLink.click();
+
     let simpleDropdown = page.locator("//select[@id='dropdown']");
-    //select by value
-    await simpleDropdown.selectOption('1'); //selects the option with value '1' from the dropdown
-    //select by index
-    await simpleDropdown.selectOption({ index: 2 }); //selects the option with index '2' from the dropdown
-    //select by label
-    await simpleDropdown.selectOption({ label: 'Option 1' }); //selects the option with label 'Option 1' from the dropdown
+
+    // await simpleDropdown.selectOption("1"); // selecting by the value.
+    // await simpleDropdown.selectOption({label: "Option 1"}); // selecting by text
+    await simpleDropdown.selectOption({index: 1}); // selecting by index
+
   });
   
 });
