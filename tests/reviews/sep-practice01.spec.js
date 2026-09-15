@@ -19,7 +19,7 @@ test.describe('Start Application Step Tests', () => {
 
     let newPage = await popupEventPromise;
 
-    let termsAndConditionsPageHeader = newPage.locator("//h1[normalize-space()='Terms and Conditions']");
+    let termsAndConditionsPageHeader = newPage.locator("//h1[contains(text(),'Terms and Conditions')]");
     
     // verify that the Terms and Conditions header is visible
     await expect(termsAndConditionsPageHeader).toBeVisible();

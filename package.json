@@ -8,8 +8,8 @@
     "tests": "npx playwright test",
     "tests:headed": "npx playwright test --headed",
     "test:specific": "npx playwright test --grep file-name.spec.js",
-    "test:specific:headed": "npx playwright test --grep file-name.spec.js --headed",
-    "test:tag": "npx playwright test --grep @tagName",
+    "test:specific:headed": "npx playwright test --grep window-popup.spec.js --headed",
+    "test:tag": "npx playwright test --grep @postrequest",
     "test:tag:headed": "npx playwright test --grep @tagName --headed",
     "report": "npx playwright show-report"
   },
@@ -22,6 +22,6 @@
     "dotenv": "^17.4.2"
   },
   "dependencies": {
-    "@faker-js/faker": "^10.5.0"
+    "@faker-js/faker": "^10.6.0"
   }
 }

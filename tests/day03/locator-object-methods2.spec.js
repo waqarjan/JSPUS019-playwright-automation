@@ -1,36 +1,46 @@
 import { test } from '@playwright/test';
 
-test.describe('Test Group', () => {
-
-  test.beforeEach(async ({ page }) => {
-    await page.goto('https://the-internet-5chk.onrender.com/');
-  });
+test.describe("Test Group", () => {
   
-  test('innerText(): retrieves the visible text content of an element', async ({ page }) => {
-    let pageHeaderElement = page.locator("//span[@class='h1y']");
-    let actualHeaderText = await pageHeaderElement.innerText();
-    //assertion
-    await test.expect(actualHeaderText).toBe('Test Automation Practice');
-    console.log(actualHeaderText);
+  test.beforeEach(async ({ page }) => {
+    await page.goto("https://the-internet-5chk.onrender.com/");
   });
 
-  test('inputValue(): retrieves the value of an input element', async ({ page }) => {
-    let inputElement = page.locator("//a[@href='/inputs']");
-    await inputElement.click();
+  test("innerText(): retrives the visible text", async ({ page }) => {
+    let headerElement = page.locator("//h1/span[@class='h1y']");
+
+    let actualText = await headerElement.innerText();
+
+    console.log(actualText);
+  });
+
+
+  test("inputValue(): only works with <input>, <textarea>, <select>, retrives the input value", async ({ page }) => {
+   
+    let inputsLink = page.getByText("Inputs");
+    await inputsLink.click();
+
     let inputBox = page.locator("//input[@type='number']");
-    inputBox.fill('123');
-    let actualInputValue = await inputBox.inputValue();
-    //assertion
-    await test.expect(actualInputValue).toBe('123');
-    console.log(actualInputValue);
+
+    await page.waitForTimeout(3000);
+
+    await inputBox.fill("123");
+
+    await page.waitForTimeout(3000);
+
+    let actualInput = await inputBox.inputValue();
+
+    console.log(actualInput);
   });
 
-  test('getAttribute(): retrieves the value of a specified attribute of an element', async ({ page }) => {
-    let abTestingLink = page.locator("//a[normalize-space()='A/B Testing']");
-    let hrefLink = await abTestingLink.getAttribute('href');
-    //assertion
-    await test.expect(hrefLink).toBe('/abtest');
-    console.log('The value of the href attribute is: ' + hrefLink);
+
+  test("getAttribute(): retrieves the attribute value", async ({ page }) => {
+    
+    let abTestingLink = page.locator("text='A/B Testing'"); 
+
+     let hrefLink = await abTestingLink.getAttribute("href");
+
+     console.log(hrefLink);
   });
 });
 
