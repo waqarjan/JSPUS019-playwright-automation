@@ -11,6 +11,8 @@
     "test:specific:headed": "npx playwright test --grep window-popup.spec.js --headed",
     "test:tag": "npx playwright test --grep @postrequest",
     "test:tag:headed": "npx playwright test --grep @tagName --headed",
+    "test:api:antigravity": "npx playwright test tests/api-antigravity",
+    "test:ui:antigravity": "npx playwright test tests/ui-antigravity",
     "report": "npx playwright show-report"
   },
   "keywords": [],
