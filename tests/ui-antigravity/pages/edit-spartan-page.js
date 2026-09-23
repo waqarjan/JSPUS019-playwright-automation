@@ -41,9 +41,7 @@ export class EditSpartanPage extends BasePage {
       await this.nameInput.fill(name);
     }
     if (gender !== undefined) {
-      await this.genderSelect.selectOption({ label: gender }).catch(async () => {
-        await this.genderSelect.selectOption(gender.toUpperCase());
-      });
+      await this.genderSelect.selectOption(gender.toUpperCase());
     }
     if (phone !== undefined) {
       await this.phoneInput.fill('');

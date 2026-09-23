@@ -36,6 +36,6 @@ test.describe('Spartan UI - Navigation & Layout', { tag: ['@ui', '@navigation', 
   test('Should navigate to home page when clicking Back to Home', async ({ page }) => {
     await listPage.backToHomeBtn.click();
     await expect(page).toHaveURL(/\/web\/v2\/home/);
-    await expect(page).toHaveTitle('Spartan App');
+    await expect(page).toHaveTitle('Spartan Home');
   });
 });

@@ -13,7 +13,7 @@ export class SpartansListPage extends BasePage {
     // Top action buttons and badges
     this.addSpartanBtn = page.locator('#add_spartan_btn');
     this.totalBadge = page.locator('#total');
-    this.searchCountText = page.locator('#search_count');
+    this.searchCountText = page.locator('#total_up_count, #search_count');
 
     // Search / Filter inputs
     this.nameFilterInput = page.locator('#name');
@@ -24,6 +24,7 @@ export class SpartansListPage extends BasePage {
     // Table & rows
     this.table = page.locator('table');
     this.tableRows = page.locator('tbody tr');
+    this.visibleTableRows = page.locator('tbody tr:visible');
   }
 
   /**
@@ -71,9 +72,8 @@ export class SpartansListPage extends BasePage {
       await this.nameFilterInput.fill(name);
     }
     if (gender) {
-      await this.genderFilterSelect.selectOption({ label: gender }).catch(async () => {
-        await this.genderFilterSelect.selectOption(gender);
-      });
+      const normalizedGender = gender.charAt(0).toUpperCase() + gender.slice(1).toLowerCase();
+      await this.genderFilterSelect.selectOption(normalizedGender);
     }
     await this.searchBtn.click();
   }

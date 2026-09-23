@@ -36,10 +36,8 @@ export class AddSpartanPage extends BasePage {
   async fillForm(name, gender, phone) {
     if (name !== undefined) await this.nameInput.fill(name);
     if (gender !== undefined) {
-      // Support both option label ("Male", "Female") and option value ("MALE", "FEMALE")
-      await this.genderSelect.selectOption({ label: gender }).catch(async () => {
-        await this.genderSelect.selectOption(gender.toUpperCase());
-      });
+      // The select options have uppercase values/text ("MALE", "FEMALE")
+      await this.genderSelect.selectOption(gender.toUpperCase());
     }
     if (phone !== undefined) await this.phoneInput.fill(phone);
   }

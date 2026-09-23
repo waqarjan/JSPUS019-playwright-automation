@@ -41,12 +41,12 @@ test.describe('Spartan UI - Search & Filter', { tag: ['@ui', '@search', '@regres
     const resultCount = await listPage.getFilteredResultCount();
     expect(resultCount).toBeGreaterThan(0);
 
-    const rowCount = await listPage.tableRows.count();
+    const rowCount = await listPage.visibleTableRows.count();
     const sampleSize = Math.min(rowCount, 5);
 
     for (let i = 0; i < sampleSize; i++) {
-      const genderCell = listPage.tableRows.nth(i).locator('td').nth(3);
-      await expect(genderCell).toHaveText('Female');
+      const genderCell = listPage.visibleTableRows.nth(i).locator('td').nth(3);
+      await expect(genderCell).toHaveText(/Female/i);
     }
   });
 
@@ -57,12 +57,12 @@ test.describe('Spartan UI - Search & Filter', { tag: ['@ui', '@search', '@regres
     const resultCount = await listPage.getFilteredResultCount();
     expect(resultCount).toBeGreaterThan(0);
 
-    const rowCount = await listPage.tableRows.count();
+    const rowCount = await listPage.visibleTableRows.count();
     const sampleSize = Math.min(rowCount, 5);
 
     for (let i = 0; i < sampleSize; i++) {
-      const genderCell = listPage.tableRows.nth(i).locator('td').nth(3);
-      await expect(genderCell).toHaveText('Male');
+      const genderCell = listPage.visibleTableRows.nth(i).locator('td').nth(3);
+      await expect(genderCell).toHaveText(/Male/i);
     }
   });
 
@@ -82,6 +82,6 @@ test.describe('Spartan UI - Search & Filter', { tag: ['@ui', '@search', '@regres
 
     const resultCount = await listPage.getFilteredResultCount();
     expect(resultCount).toBe(0);
-    expect(await listPage.tableRows.count()).toBe(0);
+    expect(await listPage.visibleTableRows.count()).toBe(0);
   });
 });

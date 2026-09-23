@@ -27,7 +27,7 @@ test.describe('Spartan UI - Add Spartan & Form Validations', { tag: ['@ui', '@ad
     await addPage.createSpartan(spartan.name, spartan.gender, spartan.phone);
 
     // Verify redirected back to list page
-    await expect(page).toHaveURL(/\/web\/v2\/spartans/);
+    await expect(page).toHaveURL(/\/web\/v2\/spartans$/);
 
     // Verify total count incremented
     const updatedCount = await listPage.getTotalCount();

@@ -13,6 +13,7 @@
     "test:tag:headed": "npx playwright test --grep @tagName --headed",
     "test:api:antigravity": "npx playwright test tests/api-antigravity",
     "test:ui:antigravity": "npx playwright test tests/ui-antigravity",
+    "test:e2e:antigravity": "npx playwright test tests/e2e-antigravity",
     "report": "npx playwright show-report"
   },
   "keywords": [],
